@@ -34,6 +34,9 @@ if __name__ == '__main__':
     if app.config['DEBUG']:
         @app.before_first_request
         def create_tables():
-            db.create_all()
+            try:
+                db.create_all()
+            except:
+                print("Cannot create tables")
 
     app.run(port=5000)
