@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, psycopg2
 from db import db
 
 class UserModel(db.Model):
